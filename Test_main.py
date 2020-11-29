@@ -59,3 +59,11 @@ class Test_Main(object):
             arr.append(stp.pop())
         expected = [4,11,13,43,29,30,25,23]
         assert expected == arr
+
+    def test_empty_path(self):
+        file_name = "Points.txt"
+        my_graph = GRAPH()
+        my_graph.getdata(file_name)
+        shortest_part = DIJKSTRASP(my_graph, 23)
+        stp = shortest_part.pathtTo(4)
+        assert stp is None
