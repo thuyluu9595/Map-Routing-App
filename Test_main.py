@@ -17,11 +17,19 @@ class Test_Main(object):
         assert expected == actual
 
     def test_num_of_vertices_edges_2(self):
-        file_name = "Points.txt"
+        file_name = "input50.txt"
         my_graph = GRAPH()
         my_graph.getdata(file_name)
         actual = (my_graph.num_of_vertices,my_graph.num_of_edges)
         expected = (50,86)
+        assert expected == actual
+
+    def test_num_of_vertices_edges_3(self):
+        file_name = "usa.txt"
+        my_graph = GRAPH()
+        my_graph.getdata(file_name)
+        actual = (my_graph.num_of_vertices,my_graph.num_of_edges)
+        expected = (87575,121961)
         assert expected == actual
 
     def test_path_1(self):
@@ -37,7 +45,7 @@ class Test_Main(object):
         assert expected == arr
 
     def test_path_2(self):
-        file_name = "Points.txt"
+        file_name = "input50.txt"
         my_graph = GRAPH()
         my_graph.getdata(file_name)
         shortest_part = DIJKSTRASP(my_graph, 26)
@@ -49,7 +57,7 @@ class Test_Main(object):
         assert expected == arr
 
     def test_path_3(self):
-        file_name = "Points.txt"
+        file_name = "input50.txt"
         my_graph = GRAPH()
         my_graph.getdata(file_name)
         shortest_part = DIJKSTRASP(my_graph, 4)
@@ -61,7 +69,7 @@ class Test_Main(object):
         assert expected == arr
 
     def test_empty_path(self):
-        file_name = "Points.txt"
+        file_name = "input50.txt"
         my_graph = GRAPH()
         my_graph.getdata(file_name)
         shortest_part = DIJKSTRASP(my_graph, 23)

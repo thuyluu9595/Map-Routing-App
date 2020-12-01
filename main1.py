@@ -325,7 +325,7 @@ def draw_this_graph(G, STP, color="blue"):
 
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    file_name = "Points.txt"
+    file_name = "input50.txt"
 
     my_graph = GRAPH()
     my_graph.getdata(file_name)
@@ -334,8 +334,8 @@ if __name__ == '__main__':
 
     shortest_part = DIJKSTRASP(my_graph, 26)
 
-    stp = shortest_part.pathtTo(30)
-    stp1 = shortest_part.pathtTo(30)
+    stp = shortest_part.pathtTo(0)
+    stp1 = shortest_part.pathtTo(0)
     if stp1 is None:
         print("There is no path")
     else:

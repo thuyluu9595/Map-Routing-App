@@ -306,7 +306,7 @@ def draw_this_graph(G, STP, color="blue"):
     # draw shortest part
     if STP:
         point = STP.pop()
-        # my_pen.write(G.vertices[point].id, font=("arial", 15))
+        #my_pen.write(G.vertices[point].id, font=("arial", 15))
         my_pen.color("blue")
         my_pen.pu()
         my_pen.goto((G.vertices[point].x / 10) - re_pos, (G.vertices[point].y / 10) - re_pos)
