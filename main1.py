@@ -1,8 +1,6 @@
 import time
 import random
 import math
-import numpy as np
-import matplotlib.pyplot as plt
 import turtle
 import sys
 
@@ -322,20 +320,20 @@ def draw_this_graph(G, STP, color="blue"):
     my_pen.hideturtle()
     turtle.done()
 
-
+# 0 ->  18 ->  34 ->  37 ->  46 ->  50 ->  57 ->  78 ->  84 ->  87 ->  94 ->  120 ->  125 ->  143 ->  169 ->  183 ->  206 ->  215 ->  232 ->  271 ->  278 ->  279 ->  285 ->  303 ->  312 ->  340
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    file_name = "input50.txt"
+    file_name = "usa.txt"
 
     my_graph = GRAPH()
     my_graph.getdata(file_name)
 
     print(my_graph.num_of_vertices, my_graph.num_of_edges)
 
-    shortest_part = DIJKSTRASP(my_graph, 26)
+    shortest_part = DIJKSTRASP(my_graph, 94)
 
-    stp = shortest_part.pathtTo(0)
-    stp1 = shortest_part.pathtTo(0)
+    stp = shortest_part.pathtTo(206)
+    stp1 = shortest_part.pathtTo(206)
     if stp1 is None:
         print("There is no path")
     else:
@@ -344,7 +342,7 @@ if __name__ == '__main__':
         for i in range(len(stp1)):
             point = stp1.pop()
             print(" -> ",point,end= '')
-    #for e in my_graph.edges:
-        #print(e.toString())
+    for e in my_graph.edges:
+        print(e.toString())
 
     draw_this_graph(my_graph, stp, "blue")
